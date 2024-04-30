@@ -6,10 +6,15 @@ from ..shared.dateclass import get_current_date
 
 def main(req: HttpRequest) -> HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
+    
     # Call the function
-    current_date = get_current_date()
-    logging.info("Current date:", current_date)
-
+    try:
+        current_date = get_current_date()
+        logging.info("Current date: %s", current_date)
+    except Exception as e:
+        logging.error("Error while getting current date: %s", e)
+        current_date = "unknown"
+    
     name = req.params.get('name')
     if not name:
         try:
