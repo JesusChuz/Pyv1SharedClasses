@@ -2,6 +2,7 @@ import logging
 
 from azure.functions import HttpRequest, HttpResponse
 from ..shared.dateclass import get_current_date
+from azure.storage.blob import BlobClient
 
 
 def main(req: HttpRequest) -> HttpResponse:
