@@ -4,6 +4,5 @@
 
 azure-functions
 pytz
-azure-storage
 azure-storage-blob
 azure-storage-queue
